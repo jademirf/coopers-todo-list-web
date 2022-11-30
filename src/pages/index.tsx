@@ -39,13 +39,15 @@ export default function Home() {
           <p className="w-full md:w-[600px] mx-auto mt-4 md:mt-8 text-white font-semibold text-[14px] md:text-[24px]">Drag and drop to set your main priorities, check when done and create what´s new.</p>
         </section>
         <div id="todo-screenshots" className="flex flex-wrap gap-4 justify-center items-start mt-10 md:mt-[80px] bg-white bg-[url('/bg-todo-section.png')] bg-no-repeat bg-left bg-middle">
-          <TodoCard title="To-do" />
-          <TodoCard title="Done" />
+          <TodoCard title="To-do" message="Take a breath. Start doing." color="green-500" items={[]} />
+          <TodoCard title="Done" message="Congratulions!" highlightText="You have done 5 tasks"  color="red-500" items={[]} />
         </div>
       </main>
 
-      <footer >
-        footer
+      <footer className="bg-black mt-10">
+        <div className="text-center h-full text-white mb-10 pt-[85px] before:block before:absolute before:inset-1 before:-skew-y-3 before:bg-black relative block">
+          footer
+        </div>
       </footer>
     </div>
   )
