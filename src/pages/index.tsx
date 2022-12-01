@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { FaSignInAlt } from 'react-icons/fa'
 import { Button } from '../components/Button'
 import { ListCard } from '../components/ListCard'
+import { ListItem } from '../components/ListItem'
 
 export default function Home() {
 
@@ -79,8 +80,22 @@ export default function Home() {
             <p className="w-full md:w-[600px] mx-auto mt-4 md:mt-8 text-white font-semibold text-[14px] md:text-[24px]">Drag and drop to set your main priorities, check when done and create what´s new.</p>
           </header>
           <div id="todo-screenshots" className="flex flex-wrap gap-4 justify-center items-start mt-10 md:mt-[80px] bg-white bg-[url('/bg-todo-section.png')] bg-no-repeat bg-left bg-middle">
-            <ListCard title="To-do" message="Take a breath. Start doing." color="green-500" items={todoItems} />
-            <ListCard title="Done" message="Congratulions!" count={5} color="orange-500" items={[]} />
+            <ListCard
+              title="To-do"
+              message="Take a breath. Start doing."
+              color="green-500"
+              allowNew
+              items={todoItems}
+            >
+              <ListItem title="Editing an item..." done={false} extraClasses="text-orange-500" id="123" />
+            </ListCard>
+            <ListCard
+              title="Done"
+              message="Congratulions!"
+              count={5}
+              color="orange-500"
+              items={[]}
+            />
           </div>
         </section>
         <section id="good-things">
