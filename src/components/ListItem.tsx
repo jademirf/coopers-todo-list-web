@@ -4,7 +4,7 @@ export interface ItemProps {
   title: string;
   done: boolean;
   id: string;
-  extraClasses: string;
+  extraClasses?: string;
 }
 
 export const ListItem = ({title, done = false, extraClasses}: ItemProps) =>{

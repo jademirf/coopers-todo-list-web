@@ -39,7 +39,7 @@ export const ListCard = ({title, color, message, count, items, allowNew = false,
             }
             {children}
           </ul>
-          <Button text="erase all" type="SECONDARY" />
+          <Button text="erase all" extraClasses="mt-2 md:mt-[18px]" type="SECONDARY" />
         </div>
       </section>
 
