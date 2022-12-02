@@ -62,7 +62,7 @@ export default function Home() {
             <p className="font-bold leading-[64px] text-[60px] lg:text-[80px]">Organize</p>
             <p className="font-regular leading-[44px] lg:leading-[64px] lg:mt-2 text-[40px] lg:text-[60px] text-green-500">your daily jobs</p>
             <p className="font-semibold text-xl lg:text-2xl leading-6 mt-7 lg:mt-14">the only way to get things done</p>
-            <Button text="Go to To-do list" extraClasses="mt-7 md:mt-11" type="PRIMARY" onClick={()=> alert('hi')} />
+            <Button text="Go to To-do list" extraClasses="mt-7 md:mt-11 bg-green-500" onClick={()=> alert('hi')} />
           </div>
           <div id="hero-image" className="hidden md:block">
             <Image src="/hero-slide.png" alt="Room with 3 chairs and one television" width={443} height={481} />
@@ -83,7 +83,7 @@ export default function Home() {
             <ListCard
               title="To-do"
               message="Take a breath. Start doing."
-              color="green-500"
+              color="bg-green-500"
               allowNew
               items={todoItems}
             >
@@ -93,7 +93,7 @@ export default function Home() {
               title="Done"
               message="Congratulions!"
               count={5}
-              color="orange-500"
+              color="bg-orange-500"
               items={[]}
             />
           </div>

@@ -18,7 +18,7 @@ interface TodoCardProps {
 export const ListCard = ({title, color, message, count, items, allowNew = false, children}: TodoCardProps) => {
   return (
     <div className="flex flex-col w-[380px] max-w-[380px] shadow-lg bg-white">
-      <div className={`h-5 w-full bg-${color}`}></div>
+      <div className={`h-5 w-full ${color}`}></div>
       <section id="card-content" className="text-2xl flex flex-col items-center mb-[30px]">
         <header className="w-full px-[23px] mb-[30px] flex flex-col items-center">
           <h3 className="font-bold text-[40px] leading-6 mt-10 mb-5">{title}</h3>
@@ -39,7 +39,7 @@ export const ListCard = ({title, color, message, count, items, allowNew = false,
             }
             {children}
           </ul>
-          <Button text="erase all" extraClasses="mt-2 md:mt-[18px]" type="SECONDARY" />
+          <Button text="erase all" extraClasses="mt-2 md:mt-[18px]" onClick={()=>{}} />
         </div>
       </section>
 
