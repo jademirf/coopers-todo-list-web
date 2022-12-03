@@ -9,8 +9,8 @@ export interface ItemProps {
 
 export const ListItem = ({title, done = false, extraClasses}: ItemProps) =>{
   return (
-    <li className={`flex gap-4 mb-5 text-left ${extraClasses}`}>
-      <div>
+    <li className={`group flex flex-1 w-full gap-4 mb-5 text-left items-center justify-between ${extraClasses}`}>
+      <div className="leading-6">
         <button>
           {
             !done ? <Image src="/icon-unchecked.svg" alt="orange unchecked option" width={24} height={24} /> : 
@@ -18,7 +18,10 @@ export const ListItem = ({title, done = false, extraClasses}: ItemProps) =>{
           }
         </button>
       </div>
-      <div className="text-[16px] leading-6">{title}</div>
+      <div className="text-[16px] w-[220px] text-left leading-6">{title}</div>
+      <div className="text-[12px] leading-6 w-[50px] text-center">
+        <button className="hidden group-hover:block text-[#999999] text-[12px] font-bold">delete</button>
+      </div>
     </li>
   )
 }
