@@ -2,8 +2,6 @@
 module.exports = {
   content: [
     './src/**/*.tsx',
-    './src/**/*.{html,js}',
-    './node_modules/tw-elements/dist/js/**/*.js',
   ],
   theme: {
     extend: {

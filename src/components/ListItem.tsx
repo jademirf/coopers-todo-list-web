@@ -11,7 +11,12 @@ export const ListItem = ({title, done = false, extraClasses}: ItemProps) =>{
   return (
     <li className={`flex gap-4 mb-5 text-left ${extraClasses}`}>
       <div>
-        <button><Image src="/icon-unchecked.svg" alt="orange unchecked option" width={24} height={24} /></button>
+        <button>
+          {
+            !done ? <Image src="/icon-unchecked.svg" alt="orange unchecked option" width={24} height={24} /> : 
+            <Image src="/icon-checked.svg" alt="green checked option mark" width={24} height={24} />
+          }
+        </button>
       </div>
       <div className="text-[16px] leading-6">{title}</div>
     </li>

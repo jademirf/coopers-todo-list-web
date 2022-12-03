@@ -34,12 +34,12 @@ export const ListCard = ({title, color, message, count, items, allowNew = false,
             }
             {
               items.map((item: ItemProps) => {
-                return <ListItem key={item.id} title={item.title} done={false} id={item.id} />
+                return <ListItem key={item.id} title={item.title} done={item.done} id={item.id} />
               })
             }
             {children}
           </ul>
-          <Button text="erase all" extraClasses="mt-2 md:mt-[18px]" onClick={()=>{}} />
+          <Button text="erase all" extraClasses="mt-2 md:mt-[18px] bg-black" onClick={()=>{}} />
         </div>
       </section>
 

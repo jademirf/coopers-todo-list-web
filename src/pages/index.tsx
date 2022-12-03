@@ -1,10 +1,41 @@
 import Image from 'next/image'
+import { Fragment, useRef, useState } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { Button } from '../components/Button'
 import { ListCard } from '../components/ListCard'
 import { ListItem } from '../components/ListItem'
+import { Dialog, Transition } from '@headlessui/react'
+import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+
 
 export default function Home() {
+  const doneItems = [
+    {
+      id: '1',
+      title: 'Get FTP credentials',
+      done: true
+    },
+    {
+      id: '2',
+      title: 'Home Page Design',
+      done: true
+    },
+    {
+      id: '3',
+      title: 'E-mail John about the deadline',
+      done: true
+    },
+    {
+      id: '4',
+      title: 'Create a Google Drive folder',
+      done: true
+    },
+    {
+      id: '5',
+      title: 'Send a gift to the client',
+      done: true
+    },
+  ]
 
   const todoItems = [
     {
@@ -44,17 +75,95 @@ export default function Home() {
     },
   ]
 
+  const [open, setOpen] = useState(false)
+
+  const signInButton = useRef(null)
+
   return (
     <div className="flex flex-1 flex-col max-w-[1440px] mx-auto">
+      <Transition.Root show={open} as={Fragment}>
+        <Dialog className="relative z-10" initialFocus={signInButton} onClose={setOpen}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel
+                  className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:min-h-[320px] sm:mx-2 sm:max-w-[932px]"
+                >
+                  <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div className="text-right">
+                      <button className="bg-white font-bold text-[20px]">close</button>
+                    </div>
+                    <div className="sm:flex sm:items-start">
+                      <div className="mx-auto hidden sm:block h-12 w-18 items-center justify-center sm:mx-0 sm:h-10 ">
+                        <Image src="/bg-modal.svg" alt="Woman pointing to up right" width={231} height={231} />
+                      </div>
+                      <div className="mt-3 sm:mt-0 sm:ml-4 text-left">
+                        <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                        {/* <div id="call-to-action" className="md:mt-[52px] w-full md:w-fit text-center md:text-left"> */}
+                          <p className="font-bold leading-[44px] sm:pt-[45px] lg:leading-[64px] text-[48px] lg:text-[80px]">Sign in</p>
+                          <p className="leading-[32px] lg:leading-[64px] lg:mt-2 text-[28px] lg:text-[48px] text-green-500">to access your list</p>
+                        </Dialog.Title>
+                        <div className="mt-10 md:mt-[84px]">
+                        <form>
+
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button
+                      type="button"
+                      className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                      onClick={() => setOpen(false)}
+                      ref={signInButton}
+                    >
+                      Sign in
+                    </button>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
       <header className="flex flex-col pt-6 bg-none bg-right md:bg-[350px] md:bg-[url('/bg-hero.png')] md:bg-no-repeat lg:bg-right">
         <div id="main-header" className="flex justify-between w-full px-2 lg:px-0 mx-auto max-w-[1280px]">
           <h1>
             <Image src="/logo-coopers.svg" alt="logo with coopers text and a green left angular bracket" width={217} height={51} />
           </h1>
-          <button className="bg-black md:hidden text-white text-center rounded h-10 font-['Poppins'] text-md leading-[21px] px-4 pt-[5px] pb-[5px]">
+          <button
+            className="bg-black md:hidden text-white text-center rounded h-10 font-['Poppins'] text-md leading-[21px] px-4 pt-[5px] pb-[5px]"
+            onClick={() => setOpen(true)}
+          >
             <FaSignInAlt />
           </button>
-          <button className="bg-black hidden md:block text-white w-[120px] h-10 font-['Poppins'] text-sm leading-[21px] pt-[9px] pb-[10px] pl-10 pr-[35px]">entrar</button>
+          <button
+            className="bg-black hidden md:block text-white w-[120px] h-10 font-['Poppins'] text-sm leading-[21px] pt-[9px] pb-[10px] pl-10 pr-[35px]"
+            onClick={() => setOpen(true)}
+          >
+            entrar
+          </button>
         </div>
 
         <div id="hero" className="flex justify-between w-full px-1 mx-auto max-w-[1280px] mt-[52px]">
@@ -79,7 +188,7 @@ export default function Home() {
             <hr className="w-[250px] md:w-[297px] mx-auto border-green-500 border-2" />
             <p className="w-full md:w-[600px] mx-auto mt-4 md:mt-8 text-white font-semibold text-[14px] md:text-[24px]">Drag and drop to set your main priorities, check when done and create what´s new.</p>
           </header>
-          <div id="todo-screenshots" className="flex flex-wrap gap-4 justify-center items-start mt-10 md:mt-[80px] bg-white bg-[url('/bg-todo-section.png')] bg-no-repeat bg-left bg-middle">
+          <div id="todo-screenshots" className="flex flex-wrap gap-4 justify-center items-start mt-10 md:mt-[80px] bg-white bg-[url('/bg-todo-section.png')] bg-no-repeat bg-left">
             <ListCard
               title="To-do"
               message="Take a breath. Start doing."
@@ -94,7 +203,7 @@ export default function Home() {
               message="Congratulions!"
               count={5}
               color="bg-orange-500"
-              items={[]}
+              items={doneItems}
             />
           </div>
         </section>
