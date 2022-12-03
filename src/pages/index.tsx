@@ -111,10 +111,10 @@ export default function Home() {
                 >
                   <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div className="text-right">
-                      <button className="bg-white font-bold text-[20px]">close</button>
+                      <button className="bg-white font-bold text-[20px]"  onClick={() => setOpen(false)}>close</button>
                     </div>
                     <div className="sm:flex sm:items-start">
-                      <div className="mx-auto hidden sm:block h-12 w-18 items-center justify-center sm:mx-0 sm:h-10 ">
+                      <div className="sm:ml-[52px] hidden sm:block h-12 w-18 items-center justify-center sm:h-10 ">
                         <Image src="/bg-modal.svg" alt="Woman pointing to up right" width={231} height={231} />
                       </div>
                       <div className="mt-3 sm:mt-0 sm:ml-4 text-left">
@@ -124,22 +124,27 @@ export default function Home() {
                           <p className="leading-[32px] lg:leading-[64px] lg:mt-2 text-[28px] lg:text-[48px] text-green-500">to access your list</p>
                         </Dialog.Title>
                         <div className="mt-10 md:mt-[84px]">
-                        <form>
-
+                        <form className="flex md:w-[342px] flex-col font-semibold text-[24px]">
+                          <label htmlFor="email">User:</label>
+                          <input type="email" id="email" name="email" className="rounded" placeholder="user@mail.com" />
+                          <label htmlFor="password" className="mt-[30px]">Password:</label>
+                          <input type="password" id="password" name="password" className="rounded" />
+                          <button
+                            type="button"
+                            className="font-semibold mx-auto mt-14 leading-[29px] text-white text-2xl w-[300px] h-16 bg-green-500"
+                            onClick={() => setOpen(false)}
+                            ref={signInButton}
+                          >
+                            Sign in
+                          </button>
                         </form>
+                        <p className="text-sm mt-10">Don't have an account? please <a href="#" className="text-green-500 font-semibold underline">Sign up</a>.</p>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                    <button
-                      type="button"
-                      className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                      onClick={() => setOpen(false)}
-                      ref={signInButton}
-                    >
-                      Sign in
-                    </button>
+                    
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
