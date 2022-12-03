@@ -186,7 +186,7 @@ export default function Home() {
           <Image src="/arrow-down.svg" alt="Gray arrow pointing down" width={30} height={18} />
         </div>
       </header>
-      <main className="px-1 flex flex-col text-center">
+      <main className="px-1 flex flex-1 flex-col text-center">
         <section id="todo-list">
           <header className="text-center before:-z-10 pt-[85px] pb-[96px] before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black relative block">
             <h2 className="text-[50px] md:text-[60px] text-white font-['Poppins'] font-semibold leading-[60px]">To-do List</h2>
@@ -212,15 +212,24 @@ export default function Home() {
             />
           </div>
         </section>
-        <section id="good-things">
-          <header>good things</header>
+        <section
+          id="good-things"
+          className="w-full lg:w-[1440px] mx-auto mt-[68px] h-20 text-left"
+        >
+          <div className=" lg:w-[1000px] h-[520px] mx-auto rounded bg-green-500">
+            bg
+          </div>
+          <div className="w-[1000px] h-[520px] mx-auto pl-[80px]">
+            <header>good things</header>
+          </div>
+          
         </section>
         <section id="contact">
           Contact
         </section>
       </main>
       <footer className="mt-20">
-        <div className="text-center h-full text-white before:-z-10 pt-[85px] before:block before:absolute before:inset-1 before:-skew-y-3 before:bg-black relative block">
+        <div className="text-center h-full text-white before:-z-10 pt-[85px] before:block before:relative before:inset-1 before:-skew-y-3 before:bg-black relative block">
           footer
         </div>
       </footer>
