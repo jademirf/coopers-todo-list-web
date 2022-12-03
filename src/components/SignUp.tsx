@@ -9,23 +9,23 @@ export const SignUp = ({handleSignIn, handleSignInBtn, reference}) => {
         <p className="font-bold leading-[44px] sm:pt-[45px] lg:leading-[64px] text-[48px] lg:text-[80px]">Sign Up</p>
         <p className="leading-[32px] lg:leading-[64px] lg:mt-2 text-[28px] lg:text-[48px] text-green-500">to start using list</p>
       </Dialog.Title>
-      <div className="mt-10 md:mt-[84px]">
+      <div className="mt-5 md:mt-[84px]">
       <form className="flex md:w-[342px] flex-col font-semibold text-[24px]">
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" name="name" className="rounded" placeholder="your name" ref={reference} />
-        <label htmlFor="email" className="mt-[30px]">User:</label>
+        <label htmlFor="email" className="mt-[15px] md:mt-[30px]">User:</label>
         <input type="email" id="email" name="email" className="rounded" placeholder="user@mail.com" />
-        <label htmlFor="password" className="mt-[30px]">Password:</label>
+        <label htmlFor="password" className="mt-[15px] md:mt-[30px]">Password:</label>
         <input type="password" id="password" name="password" className="rounded" placeholder="******" />
         <button
           type="button"
-          className="font-semibold mx-auto mt-14 leading-[29px] text-white text-2xl w-[300px] h-16 bg-green-500"
+          className="font-semibold mx-auto mt-8 md:mt-14 leading-[29px] text-white text-2xl w-[300px] h-16 bg-green-500"
           onClick={handleSignInBtn}
         >
           Sign up
         </button>
       </form>
-      <p className="text-sm mt-10">
+      <p className="text-sm md:w-[342px] mt-5 mb-3 text-center">
         Already have an account? please 
         <button
           onClick={handleSignIn}
