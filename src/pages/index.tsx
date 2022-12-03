@@ -1,11 +1,11 @@
-import Image from 'next/image'
 import { Fragment, useRef, useState } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
+import Image from 'next/image'
 import { FaSignInAlt } from 'react-icons/fa'
+
 import { Button } from '../components/Button'
 import { ListCard } from '../components/ListCard'
 import { ListItem } from '../components/ListItem'
-import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { SignIn } from '../components/SignIn'
 import { SignUp } from '../components/SignUp'
 
