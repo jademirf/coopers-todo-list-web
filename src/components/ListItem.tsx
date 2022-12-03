@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { FaTrashAlt } from 'react-icons/fa'
 
 export interface ItemProps {
   title: string;
@@ -20,7 +21,8 @@ export const ListItem = ({title, done = false, extraClasses}: ItemProps) =>{
       </div>
       <div className="text-[16px] w-[220px] text-left leading-6">{title}</div>
       <div className="text-[12px] leading-6 w-[50px] text-center">
-        <button className="hidden group-hover:block text-[#999999] text-[12px] font-bold">delete</button>
+        <button className="hidden md:group-hover:block text-[#999999] text-[12px] font-bold">delete</button>
+        <button className="hidden group-hover:inline-block md:group-hover:hidden text-[#999999] leading-4 text-[16px] font-bold"><FaTrashAlt /></button>
       </div>
     </li>
   )
