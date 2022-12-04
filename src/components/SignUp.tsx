@@ -1,7 +1,11 @@
 import { Dialog } from "@headlessui/react"
 
+interface SignUpProps {
+  handleSignIn: () => void;
+  handleSignInBtn: () => void;
+}
 
-export const SignUp = ({handleSignIn, handleSignInBtn, reference}) => {
+export const SignUp = ({handleSignIn, handleSignInBtn}: SignUpProps) => {
   return (
     <div className="mt-3 sm:mt-0 sm:ml-4 text-left">
       <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
@@ -12,7 +16,7 @@ export const SignUp = ({handleSignIn, handleSignInBtn, reference}) => {
       <div className="mt-5 md:mt-[84px]">
       <form className="flex md:w-[342px] flex-col font-semibold text-[24px]">
         <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" className="rounded" placeholder="your name" ref={reference} />
+        <input type="text" id="name" name="name" className="rounded" placeholder="your name" />
         <label htmlFor="email" className="mt-[15px] md:mt-[30px]">User:</label>
         <input type="email" id="email" name="email" className="rounded" placeholder="user@mail.com" />
         <label htmlFor="password" className="mt-[15px] md:mt-[30px]">Password:</label>
