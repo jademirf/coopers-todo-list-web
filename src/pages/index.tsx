@@ -10,6 +10,7 @@ import { SignIn } from '../components/SignIn'
 import { SignUp } from '../components/SignUp'
 import Head from 'next/head'
 import { CardGoodThings } from '../components/CardGoodThings'
+import { CarouselCards } from '../components/CarouselCards'
 
 
 export default function Home() {
@@ -77,34 +78,6 @@ export default function Home() {
       title: 'This item label may be edited',
       done: false
     },
-  ]
-
-  const tags = [
-    {title: 'function', link: '#'},
-  ]
-
-  const posts = [
-    {
-      id: 1,
-      title: 'Organize your daily job enhance your life performance',
-      image: '/img-card-1.jpg',
-      link: '#',
-      tags: tags,
-    },
-    {
-      id: 2,
-      title: 'Mark one activity as done makes your brain understands the power of doing.',
-      image: '/img-card-2.jpg',
-      link: '#',
-      tags: tags,
-    },
-    {
-      id: 3,
-      title: 'Careful with missunderstanding the difference between a list of things and a list of desires.',
-      image: '/img-card-3.jpg',
-      link: '#',
-      tags: tags,
-    }
   ]
 
   const [openDialog, setOpenDialog] = useState(false)
@@ -241,23 +214,13 @@ export default function Home() {
         </section>
         <section
           id="good-things"
-          className="flex flex-col w-full lg:w-[1440px] mx-auto mt-[68px] h-[570px] lg:h-[640px] text-left"
+          className="flex flex-col w-full lg:w-[1440px] mx-auto mt-[68px] h-[600px] lg:h-[720px] text-left"
         >
-          <div className="bg-green-500 rounded-xl lg:w-[1000px] h-[450px] lg:h-[520px] lg:mx-auto lg:pl-[80px]">
-            <div className="flex flex-col absolute mt-10 lg:mt-20" >
-              <header className="text-white pl-4 lg:pl-0 font-bold text-[30px] lg:text-[48px]">good things</header>
-              <div className="w-full mt-5 lg:mt-10 pl-4 lg:pl-0 flex gap-4 items-center lg:items-start">
-                {
-                  posts.map(post => (
-                    <CardGoodThings
-                      key={post.id}
-                      image={post.image}
-                      title={post.title}
-                      link={post.link}
-                      tags={post.tags}
-                    />
-                  ))
-                }
+          <div className="bg-green-500 rounded-xl lg:w-[1000px] h-[450px] lg:h-[550px] lg:mx-auto pb-5 lg:pl-[68px]">
+            <div className="flex w-[320px] lg:w-[1000px] flex-col absolute mt-10 lg:mt-20" >
+              <header className="text-white pl-4 lg:pl-3 font-bold text-[30px] lg:text-[48px]">good things</header>
+              <div className="w-full mt-5 lg:mt-10 pl-4 lg:pl-0 pb-5 flex items-center lg:items-start">
+                <CarouselCards />
               </div>
             </div>
           </div>
