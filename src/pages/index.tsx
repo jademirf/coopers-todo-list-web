@@ -8,6 +8,8 @@ import { ListCard } from '../components/ListCard'
 import { ListItem } from '../components/ListItem'
 import { SignIn } from '../components/SignIn'
 import { SignUp } from '../components/SignUp'
+import Head from 'next/head'
+import { CardGoodThings } from '../components/CardGoodThings'
 
 
 export default function Home() {
@@ -85,6 +87,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-1 flex-col max-w-[1440px] mx-auto">
+      <Head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </Head>
       <Transition.Root show={openDialog} as={Fragment}>
         <Dialog className="relative z-10" initialFocus={userInput} onClose={setOpenDialog}>
           <Transition.Child
@@ -208,13 +213,18 @@ export default function Home() {
         </section>
         <section
           id="good-things"
-          className="w-full lg:w-[1440px] mx-auto mt-[68px] h-20 text-left"
+          className="flex flex-col w-full lg:w-[1440px] mx-auto mt-[68px] text-left"
         >
-          <div className=" lg:w-[1000px] h-[520px] mx-auto rounded bg-green-500">
+          <div className="">
             bg
-          </div>
-          <div className="w-[1000px] h-[520px] mx-auto pl-[80px]">
-            <header>good things</header>
+            <div
+              className="lg:w-[1000px] h-[520px] mx-auto lg:pl-[80px] bg-transparent"
+            >
+              <header>good things</header>
+              <div className="w-full flex flex-col items-center lg:items-start">
+                <CardGoodThings />
+              </div>
+            </div>
           </div>
           
         </section>
@@ -222,8 +232,8 @@ export default function Home() {
           Contact
         </section>
       </main>
-      <footer className="mt-20">
-        <div className="text-center h-full text-white before:-z-10 pt-[85px] before:block before:relative before:inset-1 before:-skew-y-3 before:bg-black relative block">
+      <footer className="w-full mt-20">
+        <div className="text-center h-full text-gray-500 before:-z-10 pt-[85px] before:block before:relative before:inset-1 before:-skew-y-3 before:bg-black relative block">
           footer
         </div>
       </footer>
