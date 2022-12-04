@@ -17,7 +17,7 @@ export const CardGoodThings = ({image, link, tags, title}: PostCardProps) => {
     >
       <div className="text-right">
         <Image className="rounded-t-lg" src={image} width={360} height={200} alt="Card Header image" />
-        <Image className="-mt-7 inline mr-5" src="/icone-coopers.svg" width={49} height={56} alt="green coopers icon" />
+        <Image className="-mt-7 inline mr-5" src="/icone-coopers.png" width={49} height={56} alt="green coopers icon" />
       </div>
       <section className="px-8 pb-[23px] h-[230px]">
         <div className="w-full text-gray-500">
@@ -34,7 +34,7 @@ export const CardGoodThings = ({image, link, tags, title}: PostCardProps) => {
         </div>
         <p className="mt-[22px] h-[80px] leading-[21.6px] mb-3 font-medium text-gray-700 dark:text-gray-400">{title}</p>
         <div>
-          <a href={link} className="inline-flex items-center py-2 text-[16px] font-bold text-center text-green-500 rounded-lg hover:text-green-400  focus:outline-none focus:ring-green-300">
+          <a href={link} className="inline-flex items-center py-2 text-[16px] font-bold text-center text-green-500 rounded-lg  hover:underline focus:outline-none focus:ring-green-300">
               read more
           </a>
         </div>

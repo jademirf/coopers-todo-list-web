@@ -83,6 +83,30 @@ export default function Home() {
     {title: 'function', link: '#'},
   ]
 
+  const posts = [
+    {
+      id: 1,
+      title: 'Organize your daily job enhance your life performance',
+      image: '/img-card-1.jpg',
+      link: '#',
+      tags: tags,
+    },
+    {
+      id: 2,
+      title: 'Mark one activity as done makes your brain understands the power of doing.',
+      image: '/img-card-2.jpg',
+      link: '#',
+      tags: tags,
+    },
+    {
+      id: 3,
+      title: 'Careful with missunderstanding the difference between a list of things and a list of desires.',
+      image: '/img-card-3.jpg',
+      link: '#',
+      tags: tags,
+    }
+  ]
+
   const [openDialog, setOpenDialog] = useState(false)
   const [isSignUp, setIsSignUp] = useState(false)
 
@@ -105,7 +129,7 @@ export default function Home() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            <div className="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
           <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -158,7 +182,7 @@ export default function Home() {
       <header className="flex flex-col pt-6 bg-none bg-right md:bg-[350px] md:bg-[url('/bg-hero.png')] md:bg-no-repeat lg:bg-right">
         <div id="main-header" className="flex justify-between w-full px-2 lg:px-0 mx-auto max-w-[1280px]">
           <h1>
-            <Image src="/logo-coopers.svg" alt="logo with coopers text and a green left angular bracket" width={217} height={51} />
+            <Image src="/logo-coopers.png" alt="logo with coopers text and a green left angular bracket" width={217} height={51} />
           </h1>
           <button
             className="bg-black md:hidden text-white text-center rounded h-10 font-['Poppins'] text-md leading-[21px] px-4 pt-[5px] pb-[5px]"
@@ -223,12 +247,17 @@ export default function Home() {
             <div className="flex flex-col absolute mt-10 lg:mt-20" >
               <header className="text-white pl-4 lg:pl-0 font-bold text-[30px] lg:text-[48px]">good things</header>
               <div className="w-full mt-5 lg:mt-10 pl-4 lg:pl-0 flex gap-4 items-center lg:items-start">
-                <CardGoodThings
-                  image="/img-card-1.jpg"
-                  title="Organize your daily job enhance your life performance"
-                  link="#"
-                  tags={tags}
-                />
+                {
+                  posts.map(post => (
+                    <CardGoodThings
+                      key={post.id}
+                      image={post.image}
+                      title={post.title}
+                      link={post.link}
+                      tags={post.tags}
+                    />
+                  ))
+                }
               </div>
             </div>
           </div>
