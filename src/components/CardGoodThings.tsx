@@ -12,7 +12,7 @@ interface PostCardProps {
 }
 export const CardGoodThings = ({image, link, tags, title}: PostCardProps) => {
   return (
-    <div className="p-7 pt-0 pl-3">
+    <div className="p-7 pt-0 pl-3 w-[375px] pb-10">
       <div
         className="max-w-full md:max-w-sm bg-white w-[340px] md:w-[360px] h-[430px] rounded-lg shadow-xl"
         >

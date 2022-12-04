@@ -10,3 +10,14 @@ button[data-testid="carousel-indicator"] {
 button[data-testid="carousel-indicator"]:hover, button[data-testid="carousel-indicator"]:active {
   background-color: #4AC959 !important;
 }
+
+@media only screen and (min-width: 1024px) {
+  div[data-testid="carousel"] .indiana-scroll-container--hide-scrollbars {
+    width: 375px;
+    overflow: visible;
+  }
+  button[data-testid="carousel-indicator"] {
+    width: 29px !important;
+    height: 29px !important;
+  }
+}

@@ -32,7 +32,7 @@ export const CarouselCards = () => {
     }
   ]
   return(
-    <div className="grid w-[360px] md:w-full py-4">
+    <div className="grid w-[360px] md:w-full pb-4">
       <Carousel indicators={true} leftControl=" " rightControl=" " className="w-[360px] md:w-[720px] lg:w-[1000px] pb-10">
         {
           posts.map(post => (
