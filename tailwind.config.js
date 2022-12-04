@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "post-card": "drop-shadow(8px 8px 24px rgba(12, 41, 208, 0.16));"
+      },
       fontFamily: {
         sans: 'Montserrat, sans-serif',
       },

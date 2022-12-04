@@ -79,6 +79,10 @@ export default function Home() {
     },
   ]
 
+  const tags = [
+    {title: 'function', link: '#'},
+  ]
+
   const [openDialog, setOpenDialog] = useState(false)
   const [isSignUp, setIsSignUp] = useState(false)
 
@@ -213,16 +217,18 @@ export default function Home() {
         </section>
         <section
           id="good-things"
-          className="flex flex-col w-full lg:w-[1440px] mx-auto mt-[68px] text-left"
+          className="flex flex-col w-full lg:w-[1440px] mx-auto mt-[68px] h-[570px] lg:h-[640px] text-left"
         >
-          <div className="">
-            bg
-            <div
-              className="lg:w-[1000px] h-[520px] mx-auto lg:pl-[80px] bg-transparent"
-            >
-              <header>good things</header>
-              <div className="w-full flex flex-col items-center lg:items-start">
-                <CardGoodThings />
+          <div className="bg-green-500 rounded-xl lg:w-[1000px] h-[450px] lg:h-[520px] lg:mx-auto lg:pl-[80px]">
+            <div className="flex flex-col absolute mt-10 lg:mt-20" >
+              <header className="text-white pl-4 lg:pl-0 font-bold text-[30px] lg:text-[48px]">good things</header>
+              <div className="w-full mt-5 lg:mt-10 pl-4 lg:pl-0 flex gap-4 items-center lg:items-start">
+                <CardGoodThings
+                  image="/img-card-1.jpg"
+                  title="Organize your daily job enhance your life performance"
+                  link="#"
+                  tags={tags}
+                />
               </div>
             </div>
           </div>
