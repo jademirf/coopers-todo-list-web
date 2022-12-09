@@ -1,5 +1,5 @@
-import { ListCard } from "./ListCard"
-import { ListItem } from "./ListItem"
+import { ListCard } from "../ListCard"
+import { ListItem } from "../ListItem"
 
 
 export const TodoListSection = () => {

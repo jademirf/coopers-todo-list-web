@@ -1,4 +1,4 @@
-import { CarouselCards } from "./CarouselCards"
+import { CarouselCards } from "../CarouselCards"
 
 
 export const GoodThingsSection = () => {

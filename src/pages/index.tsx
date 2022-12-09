@@ -5,9 +5,9 @@ import { useCustomEventListener } from 'react-custom-events'
 import { SignIn } from '../components/SignIn'
 import { SignUp } from '../components/SignUp'
 import Head from 'next/head'
-import { Header } from '../components/Header'
-import { TodoListSection } from '../components/TodoListSection'
-import { GoodThingsSection } from '../components/GoodThingsSection'
+import { Header } from '../components/layout/Header'
+import { TodoListSection } from '../components/layout/TodoListSection'
+import { GoodThingsSection } from '../components/layout/GoodThingsSection'
 
 
 export default function Home() {
@@ -17,7 +17,6 @@ export default function Home() {
   const [isSignUp, setIsSignUp] = useState(false)
 
   const userInput = useRef(null)
-  const userName = useRef(null)
 
   useCustomEventListener('open-dialog', () => {
     setOpenDialog(true)
@@ -67,14 +66,12 @@ export default function Home() {
                         !isSignUp ?
                         <SignIn
                           handleSignUpBtn={() => setIsSignUp(true)}
-                          reference={userName}
                           handleSignIn={() => {
                             setIsSignUp(false)
                           }} 
                         /> :
                         <SignUp
                           handleSignInBtn={() => setIsSignUp(false)}
-                          reference={userName}
                           handleSignIn={() => {
                             setIsSignUp(false)
                           }} 

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import {useState} from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { emitCustomEvent } from 'react-custom-events'
-import { Button } from './Button'
+import { Button } from '../Button'
 
 export const Header = () => {
   const [openDialog, setOpenDialog] = useState(false)
